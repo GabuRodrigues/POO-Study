@@ -11,3 +11,6 @@ if __name__ == "__main__":
     p1.walk('Rio de Janeiro')
     p1.walk('Rio de Janeiro')
     p1.walk('Rio de Janeiro')
+
+    p2 = People.get_year_of_birth('Jenniffer', 21)
+    p2.eat('Banana')

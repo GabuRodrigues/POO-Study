@@ -1,10 +1,13 @@
-from cProfile import run
+from datetime import datetime
 
 
 class People:
-    def __init__(self, name, idade, eating=False, talking=False, friend_name=None, walking=False, running=False):
+    today = datetime.today()
+    current_year = today.year
+
+    def __init__(self, name, age, eating=False, talking=False, friend_name=None, walking=False, running=False):
         self.name = name
-        self.idade = idade
+        self.age = age
         self.eating = eating
         self.talking = talking
         self.walking = walking
@@ -39,3 +42,9 @@ class People:
             return
         print(f"{self.name} is running")
         self.running = True
+    
+    @classmethod
+    def get_year_of_birth (cls, name, age):
+        year_of_birth = cls.current_year - age
+        print(f"name: {name}, year_of_birth: {year_of_birth}")
+        return cls(name, age)
